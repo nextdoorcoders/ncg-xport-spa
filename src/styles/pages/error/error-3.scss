@@ -1,0 +1,17 @@
+//
+// Error 3
+//
+
+.error.error-3 {
+    .error-title {
+        font-size: 8.7rem !important;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .error.error-3 {
+        .error-title {
+            font-size: 15.7rem !important;
+        }
+    }
+}

@@ -1,0 +1,250 @@
+//
+// Kanban Board
+//
+
+// Variables
+$kanban-spacer-y: 1.25rem;
+$kanban-spacer-x: 1.25rem;
+
+.kanban-container {
+    width: 100% !important;
+    display: flex;
+    flex-wrap: wrap;
+
+    .kanban-board {
+        float: none;
+        flex-shrink: 0;
+        margin-bottom: $kanban-spacer-y;
+        margin-right: $kanban-spacer-x !important;
+        background-color: $gray-100;
+        @include border-radius($border-radius);
+
+        &:last-child {
+            margin-right: 0 !important;
+        }
+
+        .kanban-board-header {
+            @include border-top-left-radius($border-radius);
+            @include border-top-right-radius($border-radius);
+
+            .kanban-title-board {
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: $dark;
+            }
+
+            @each $name, $color in $theme-colors {
+                &.#{$name} {
+                    background-color: $color;
+                    box-shadow: none;
+
+                    .kanban-title-board {
+                        color: theme-inverse-color($name);
+                    }
+                }
+
+                &.light-#{$name} {
+                    background-color: rgba($color, 0.1);
+                    box-shadow: none;
+
+                    .kanban-title-board {
+                        color: $color;
+                    }
+                }
+            }
+        }
+
+        .kanban-drag {
+            .kanban-item {
+                @include border-radius($border-radius);
+                box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.05);
+
+                @each $name, $color in $theme-colors {
+                    &[data-class="#{$name}"] {
+                        background-color: $color;
+                        color: theme-inverse-color($name);
+                        box-shadow: none;
+                    }
+
+                    &[data-class="light-#{$name}"] {
+                        background-color: rgba($color, 0.1);
+                        color: $color;
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        footer {
+
+        }
+    }
+}
+
+/* FROM CSS */
+.kanban-container {
+    position: relative;
+    box-sizing: border-box;
+    width: auto
+}
+
+.kanban-container * {
+    box-sizing: border-box
+}
+
+.kanban-container:after {
+    clear: both;
+    display: block;
+    content: ""
+}
+
+.kanban-board {
+    position: relative;
+    float: left;
+    background: #e2e4e6;
+    transition: all .3s cubic-bezier(.23, 1, .32, 1)
+}
+
+.kanban-board.disabled-board {
+    opacity: .3
+}
+
+.kanban-board.is-moving.gu-mirror {
+    transform: rotate(3deg)
+}
+
+.kanban-board.is-moving.gu-mirror .kanban-drag {
+    overflow: hidden;
+    padding-right: 50px
+}
+
+.kanban-board header {
+    font-size: 16px;
+    padding: 15px
+}
+
+.kanban-board header .kanban-title-board {
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    display: inline
+}
+
+.kanban-board header .kanban-title-button {
+    float: right
+}
+
+.kanban-board .kanban-drag {
+    min-height: 200px;
+    padding: 15px;
+
+    .card {
+        margin-bottom: 15px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.kanban-board:after {
+    clear: both;
+    display: block;
+    content: ""
+}
+
+.kanban-item {
+    background: #ffffff;
+    //padding: 15px;
+    margin-bottom: 20px;
+    transition: all .3s cubic-bezier(.23, 1, .32, 1);
+
+    &:hover {
+        cursor: move;
+    }
+
+    &.disabled {
+        background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+        background-size: 1rem 1rem;
+    }
+}
+
+.kanban-item:last-child {
+    margin: 0
+}
+
+.kanban-item.is-moving.gu-mirror {
+    transform: rotate(3deg);
+    height: auto !important
+}
+
+.gu-mirror {
+    position: fixed !important;
+    margin: 0 !important;
+    z-index: 9999 !important
+}
+
+.gu-hide {
+    display: none !important
+}
+
+.gu-unselectable {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important
+}
+
+.gu-transit {
+    opacity: .2 !important;
+    transform: rotate(0) !important
+}
+
+.drag_handler {
+    background: #ffffff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    float: left;
+    top: -3px;
+    margin-right: 4px
+}
+
+.drag_handler:hover {
+    cursor: move
+}
+
+.drag_handler_icon {
+    position: relative;
+    display: block;
+    background: #000000;
+    width: 24px;
+    height: 2px;
+    top: 12px;
+    transition: .5s ease-in-out
+}
+
+.drag_handler_icon:after, .drag_handler_icon:before {
+    background: #000000;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .5s ease-in-out
+}
+
+.drag_handler_icon:before {
+    top: 6px
+}
+
+.drag_handler_icon:after {
+    bottom: 6px
+}
+
+.ghost-card {
+    opacity: 0.5;
+    background: #f7fafc;
+    border: 1px solid #616161;
+}
