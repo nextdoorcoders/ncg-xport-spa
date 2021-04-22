@@ -116,7 +116,7 @@ export default {}
               <p> </p>
               <p><span class="T2">Contact Us </span></p>
               <p> </p>
-              <p>If you have any questions or concerns about these Terms of Service, You can contact us at <span class="T5">s.mykhalchuk@ncg.ua</span></p>
+              <p>If you have any questions or concerns about these Terms of Service, You can contact us at <span class="T5">xport@ncg.ua</span></p>
               <p> </p>
               <p> </p>
               <p/>

@@ -221,7 +221,7 @@ export default {}
               <p> </p>
               <p><span class="T4">Contact Us  </span></p>
               <p> </p>
-              <p>If you have any questions or concerns about this Privacy Policy, You can contact us: <span class="T5">s.mykhalchuk@ncg.ua</span></p>
+              <p>If you have any questions or concerns about this Privacy Policy, You can contact us: <span class="T5">xport@ncg.ua</span></p>
             </div>
 
             <div class="pb-lg-0 pb-5">
