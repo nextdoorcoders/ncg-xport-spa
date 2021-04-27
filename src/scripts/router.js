@@ -30,6 +30,7 @@ import TermsAndConditions from '../views/pages/text/TermsAndConditions'
 import PrivacyPolicy from '../views/pages/text/PrivacyPolicy'
 
 import Error404 from '../views/pages/error/Error404'
+import ReportVendor from "../views/pages/reports/ReportVendor";
 
 Vue.use(VueRouter)
 
@@ -131,6 +132,15 @@ const routes = [
         meta: {
           auth: true,
           module: 'map'
+        }
+      },
+      {
+        path: 'reports/vendors',
+        name: 'reports.vendors',
+        component: ReportVendor,
+        meta: {
+          auth: true,
+          module: 'reports'
         }
       }
     ]
