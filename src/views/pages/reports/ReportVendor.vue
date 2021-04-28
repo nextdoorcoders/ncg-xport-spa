@@ -49,11 +49,18 @@ export default {
     <div class="d-flex flex-column-fluid">
       <!--begin::Container-->
       <div class=" container ">
-        <DataTable :value="reportCollection">
-            <Column field="time" header="Time"></Column>
-          <Column field="vendor_service" header="Vendor"></Column>
-          <Column field="http_code" header="Code"></Column>
+        <DataTable :value="reportCollection" :paginator="true" :rows="10"
+                   sortMode="multiply"
+                   stripedRows
+                   paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink"
+                   :rowsPerPageOptions="[10,20,50]" responsiveLayout="scroll"
+                   currentPageReportTemplate=" Showing {first} to {last} of {totalRecords}">
+          <Column field="id" header="ID" sortable></Column>
+          <Column field="time" header="Time" sortable></Column>
+          <Column field="vendor_service" header="Vendor" sortable></Column>
+          <Column field="http_code" header="Code" sortable></Column>
           <Column field="message" header="Message"></Column>
+          <Column field="data" header="Data"></Column>
         </DataTable>
       </div>
       <!--end::Container-->
