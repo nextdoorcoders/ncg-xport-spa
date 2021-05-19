@@ -211,43 +211,43 @@ export default {
           <!--end::Item-->
           <!--begin::Item-->
 
-          <!--          <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="Organizations">-->
-          <!--            <button @click="onSelectTab('organization')" class="nav-link btn btn-icon btn-clean btn-lg" :class="{'active': currentTab === 'organization'}">-->
-          <!--              <span class="svg-icon svg-icon-xl">-->
-          <!--                &lt;!&ndash;begin::Svg Icon | path:assets/media/svg/icons/General/Shield-check.svg&ndash;&gt;-->
-          <!--                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">-->
-          <!--                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
-          <!--                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>-->
-          <!--                    <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>-->
-          <!--                    <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero"></path>-->
-          <!--                  </g>-->
-          <!--                </svg>-->
-          <!--                &lt;!&ndash;end::Svg Icon&ndash;&gt;-->
-          <!--              </span>-->
-          <!--            </button>-->
-          <!--          </li>-->
+<!--          <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="Organizations">
+            <button @click="onSelectTab('organization')" class="nav-link btn btn-icon btn-clean btn-lg" :class="{'active': currentTab === 'organization'}">
+              <span class="svg-icon svg-icon-xl">
+                &lt;!&ndash;begin::Svg Icon | path:assets/media/svg/icons/General/Shield-check.svg&ndash;&gt;
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                    <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero"></path>
+                  </g>
+                </svg>
+                &lt;!&ndash;end::Svg Icon&ndash;&gt;
+              </span>
+            </button>
+          </li>-->
 
           <!-- end::Item-->
           <!-- begin::Item-->
 
-          <!--          <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="Reports">-->
-          <!--            <button @click="onSelectTab('report')" class="nav-link btn btn-icon btn-clean btn-lg" :class="{'active': currentTab === 'report'}">-->
-          <!--              <span class="svg-icon svg-icon-xl">-->
+          <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window" title="System">
+            <button @click="onSelectTab('system')" class="nav-link btn btn-icon btn-clean btn-lg" :class="{'active': currentTab === 'system'}">
+              <span class="svg-icon svg-icon-xl">
 
-          <!--                &lt;!&ndash;begin::Svg Icon | path:assets/media/svg/icons/General/Shield-check.svg&ndash;&gt;-->
-          <!--                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">-->
-          <!--                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
-          <!--                    <rect id="bound" x="0" y="0" width="24" height="24"></rect>-->
-          <!--                    <rect id="Rectangle-62-Copy" fill="#000000" opacity="0.3" x="13" y="4" width="3" height="16" rx="1.5"></rect>-->
-          <!--                    <rect id="Rectangle-62-Copy-2" fill="#000000" x="8" y="9" width="3" height="11" rx="1.5"></rect>-->
-          <!--                    <rect id="Rectangle-62-Copy-4" fill="#000000" x="18" y="11" width="3" height="9" rx="1.5"></rect>-->
-          <!--                    <rect id="Rectangle-62-Copy-3" fill="#000000" x="3" y="13" width="3" height="7" rx="1.5"></rect>-->
-          <!--                  </g>-->
-          <!--                </svg>-->
-          <!--                &lt;!&ndash;end::Svg Icon&ndash;&gt;-->
-          <!--              </span>-->
-          <!--            </button>-->
-          <!--          </li>-->
+                <!--begin::Svg Icon | path:assets/media/svg/icons/General/Shield-check.svg-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+                    <rect id="Rectangle-62-Copy" fill="#000000" opacity="0.3" x="13" y="4" width="3" height="16" rx="1.5"></rect>
+                    <rect id="Rectangle-62-Copy-2" fill="#000000" x="8" y="9" width="3" height="11" rx="1.5"></rect>
+                    <rect id="Rectangle-62-Copy-4" fill="#000000" x="18" y="11" width="3" height="9" rx="1.5"></rect>
+                    <rect id="Rectangle-62-Copy-3" fill="#000000" x="3" y="13" width="3" height="7" rx="1.5"></rect>
+                  </g>
+                </svg>
+                <!--end::Svg Icon-->
+              </span>
+            </button>
+          </li>
           <!--end::Item-->
 
         </ul>
@@ -529,67 +529,96 @@ export default {
           <!--end::Tab Pane-->
 
           <!--begin::Tab Pane-->
-          <!--          <div class="tab-pane p-3 px-lg-7 py-lg-5 fade" :class="{'show active': currentTab === 'organization'}">-->
-          <!--            &lt;!&ndash;begin::Form&ndash;&gt;-->
-          <!--            <div class="p-2 p-lg-3">-->
-          <!--              <div class="d-flex">-->
-          <!--                <div class="input-icon h-40px">-->
-          <!--                  <input v-model="search.organizationSearch" type="text" class="form-control form-control-lg form-control-solid h-40px" placeholder="Search..."/>-->
-          <!--                  <span>-->
-          <!--                    <span class="svg-icon svg-icon-lg">-->
-          <!--                      &lt;!&ndash;begin::Svg Icon | path:assets/images/svg/icons/General/Search.svg&ndash;&gt;-->
-          <!--                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">-->
-          <!--                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
-          <!--                          <rect x="0" y="0" width="24" height="24"/>-->
-          <!--                          <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>-->
-          <!--                          <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"/>-->
-          <!--                        </g>-->
-          <!--                      </svg>-->
-          <!--                      &lt;!&ndash;end::Svg Icon&ndash;&gt;-->
-          <!--                    </span>-->
-          <!--                  </span>-->
-          <!--                </div>-->
+<!--          <div class="tab-pane p-3 px-lg-7 py-lg-5 fade" :class="{'show active': currentTab === 'organization'}">
+            &lt;!&ndash;begin::Form&ndash;&gt;
+            <div class="p-2 p-lg-3">
+              <div class="d-flex">
+                <div class="input-icon h-40px">
+                  <input v-model="search.organizationSearch" type="text" class="form-control form-control-lg form-control-solid h-40px" placeholder="Search..."/>
+                  <span>
+                    <span class="svg-icon svg-icon-lg">
+                      &lt;!&ndash;begin::Svg Icon | path:assets/images/svg/icons/General/Search.svg&ndash;&gt;
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <rect x="0" y="0" width="24" height="24"/>
+                          <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+                          <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                      </svg>
+                      &lt;!&ndash;end::Svg Icon&ndash;&gt;
+                    </span>
+                  </span>
+                </div>
+                <router-link :to="{name: 'marketing.organization.create'}" class="btn btn-icon btn-default btn-hover-primary ml-2 h-40px w-40px flex-shrink-0" data-toggle="tooltip" title="New Organization" data-placement="bottom">
+                  <span class="svg-icon svg-icon-lg">
+                    &lt;!&ndash;begin::Svg Icon | path:assets/images/svg/icons/Code/Plus.svg&ndash;&gt;
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+                        <circle id="Oval-5" fill="#000000" opacity="0.3" cx="12" cy="12" r="10"></circle>
+                        <path d="M11,11 L11,7 C11,6.44771525 11.4477153,6 12,6 C12.5522847,6 13,6.44771525 13,7 L13,11 L17,11 C17.5522847,11 18,11.4477153 18,12 C18,12.5522847 17.5522847,13 17,13 L13,13 L13,17 C13,17.5522847 12.5522847,18 12,18 C11.4477153,18 11,17.5522847 11,17 L11,13 L7,13 C6.44771525,13 6,12.5522847 6,12 C6,11.4477153 6.44771525,11 7,11 L11,11 Z" id="Combined-Shape" fill="#000000"></path>
+                      </g>
+                    </svg>
+                    &lt;!&ndash;end::Svg Icon&ndash;&gt;
+                  </span>
+                </router-link>
+              </div>
+            </div>
+                      &lt;!&ndash;end::Form&ndash;&gt;
 
-          <!--                <router-link :to="{name: 'marketing.organization.create'}" class="btn btn-icon btn-default btn-hover-primary ml-2 h-40px w-40px flex-shrink-0" data-toggle="tooltip" title="New Organization" data-placement="bottom">-->
-          <!--                  <span class="svg-icon svg-icon-lg">-->
-          <!--                    &lt;!&ndash;begin::Svg Icon | path:assets/images/svg/icons/Code/Plus.svg&ndash;&gt;-->
-          <!--                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">-->
-          <!--                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">-->
-          <!--                        <rect id="bound" x="0" y="0" width="24" height="24"></rect>-->
-          <!--                        <circle id="Oval-5" fill="#000000" opacity="0.3" cx="12" cy="12" r="10"></circle>-->
-          <!--                        <path d="M11,11 L11,7 C11,6.44771525 11.4477153,6 12,6 C12.5522847,6 13,6.44771525 13,7 L13,11 L17,11 C17.5522847,11 18,11.4477153 18,12 C18,12.5522847 17.5522847,13 17,13 L13,13 L13,17 C13,17.5522847 12.5522847,18 12,18 C11.4477153,18 11,17.5522847 11,17 L11,13 L7,13 C6.44771525,13 6,12.5522847 6,12 C6,11.4477153 6.44771525,11 7,11 L11,11 Z" id="Combined-Shape" fill="#000000"></path>-->
-          <!--                      </g>-->
-          <!--                    </svg>-->
-          <!--                    &lt;!&ndash;end::Svg Icon&ndash;&gt;-->
-          <!--                  </span>-->
-          <!--                </router-link>-->
-          <!--              </div>-->
-          <!--            </div>-->
-          <!--            &lt;!&ndash;end::Form&ndash;&gt;-->
+            <h3 class="p-2 p-lg-3 my-1 my-lg-3">Organizations</h3>
 
-          <!--            <h3 class="p-2 p-lg-3 my-1 my-lg-3">Organizations</h3>-->
-
-          <!--            &lt;!&ndash;begin::List&ndash;&gt;-->
-          <!--            <div class="list list-hover">-->
-          <!--              &lt;!&ndash;begin::Item&ndash;&gt;-->
-          <!--              <router-link v-for="organization in filteredOrganizationCollection" :to="{name: 'marketing.organization.update', params: {organization: organization.id}}" :key="organization.id" class="list-item hoverable p-2 p-lg-3 mb-2">-->
-          <!--                <div class="d-flex align-items-center">-->
-          <!--                  &lt;!&ndash;begin::Text&ndash;&gt;-->
-          <!--                  <div class="d-flex flex-column flex-grow-1 mr-2">-->
-          <!--                    <span class="text-dark-75 font-size-h6 mb-0">{{ organization.name }}</span>-->
-          <!--                    <span class="text-muted text-hover-primary font-weight-bold">#{{ organization.email }}</span>-->
-          <!--                  </div>-->
-          <!--                  &lt;!&ndash;begin::End&ndash;&gt;-->
-          <!--                </div>-->
-          <!--              </router-link>-->
-          <!--              &lt;!&ndash;end::Item&ndash;&gt;-->
-          <!--            </div>-->
-          <!--            &lt;!&ndash;end::List&ndash;&gt;-->
-          <!--          </div>-->
+            &lt;!&ndash;begin::List&ndash;&gt;
+            <div class="list list-hover">
+              &lt;!&ndash;begin::Item&ndash;&gt;
+              <router-link v-for="organization in filteredOrganizationCollection" :to="{name: 'marketing.organization.update', params: {organization: organization.id}}" :key="organization.id" class="list-item hoverable p-2 p-lg-3 mb-2">
+                <div class="d-flex align-items-center">
+                  &lt;!&ndash;begin::Text&ndash;&gt;
+                  <div class="d-flex flex-column flex-grow-1 mr-2">
+                    <span class="text-dark-75 font-size-h6 mb-0">{{ organization.name }}</span>
+                    <span class="text-muted text-hover-primary font-weight-bold">#{{ organization.email }}</span>
+                  </div>
+                  &lt;!&ndash;begin::End&ndash;&gt;
+                </div>
+              </router-link>
+              &lt;!&ndash;end::Item&ndash;&gt;
+            </div>
+            &lt;!&ndash;end::List&ndash;&gt;
+          </div>-->
           <!--end::Tab Pane-->
 
           <!--begin::Tab Pane-->
-<!--          <div class="tab-pane p-3 px-lg-7 py-lg-5 fade" :class="{'show active': currentTab === 'report'}"></div>-->
+          <div class="tab-pane p-3 px-lg-7 py-lg-5 fade" :class="{'show active': currentTab === 'system'}">
+
+            <h3 class="p-2 p-lg-3 my-1 my-lg-3">System</h3>
+
+            <!--begin::List-->
+            <div class="list list-hover">
+              <!--begin::Item-->
+              <router-link :to="{name: 'system.data-source'}" class="list-item hoverable p-2 p-lg-3 mb-2">
+                <div class="d-flex align-items-center">
+                  <!--begin::Text-->
+                  <div class="d-flex flex-column flex-grow-1 mr-2">
+                    <span class="text-dark-75 font-size-h6 mb-0">Data Source</span>
+                    <span class="text-muted text-hover-primary font-weight-bold">System data</span>
+                  </div>
+                  <!--begin::End-->
+                </div>
+              </router-link>
+              <router-link :to="{name: 'system.logs'}" class="list-item hoverable p-2 p-lg-3 mb-2">
+                <div class="d-flex align-items-center">
+                  <!--begin::Text-->
+                  <div class="d-flex flex-column flex-grow-1 mr-2">
+                    <span class="text-dark-75 font-size-h6 mb-0">Logs</span>
+                    <span class="text-muted text-hover-primary font-weight-bold">System logs</span>
+                  </div>
+                  <!--begin::End-->
+                </div>
+              </router-link>
+              <!--end::Item-->
+            </div>
+            <!--end::List-->
+          </div>
           <!--end::Tab Pane-->
         </div>
         <!--end::Tab Content-->
