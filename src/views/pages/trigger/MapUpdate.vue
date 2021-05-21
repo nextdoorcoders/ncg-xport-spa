@@ -194,7 +194,7 @@ export default {
               <li v-if="mapResource.project_id" class="nav-item">
                 <button @click="onSelectTab('googleCampaigns')" class="nav-link border-0" :class="{'active': currentTab === 'googleCampaigns'}">
                   <span class="nav-icon"><i class="flaticon2-layers-1"></i></span>
-                  <span class="nav-text">Google Campaigns</span>
+                  <span class="nav-text">Ads Company</span>
                 </button>
               </li>
               <li v-if="mapResource.project_id" class="nav-item">

@@ -26,6 +26,9 @@ import google from './store/google'
 import htmlclass from './store/template/htmlclass.store'
 import config from './store/template/config.store'
 
+import state from './store/reports/state.store'
+import logs from './store/reports/logs.store'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -43,6 +46,13 @@ export default new Vuex.Store({
       modules: {
         location,
         timezone
+      }
+    },
+    reports: {
+      namespaced:true,
+      modules: {
+        state,
+        logs,
       }
     },
     marketing: {

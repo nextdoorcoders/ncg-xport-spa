@@ -30,7 +30,9 @@ import TermsAndConditions from '../views/pages/text/TermsAndConditions'
 import PrivacyPolicy from '../views/pages/text/PrivacyPolicy'
 
 import Error404 from '../views/pages/error/Error404'
-import ReportVendor from "../views/pages/reports/ReportVendor";
+
+import StateVendor from "../views/pages/reports/StateVendor";
+import LogsVendor from "../views/pages/reports/LogsVendor";
 
 Vue.use(VueRouter)
 
@@ -135,12 +137,21 @@ const routes = [
         }
       },
       {
-        path: 'reports/vendors',
-        name: 'reports.vendors',
-        component: ReportVendor,
+        path: 'reports/state',
+        name: 'reports.state',
+        component: StateVendor,
         meta: {
           auth: true,
-          module: 'reports'
+          module: 'state'
+        }
+      },
+      {
+        path: 'reports/logs',
+        name: 'reports.logs',
+        component: LogsVendor,
+        meta: {
+          auth: true,
+          module: 'logs'
         }
       }
     ]

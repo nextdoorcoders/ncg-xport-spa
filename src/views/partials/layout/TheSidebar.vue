@@ -18,6 +18,7 @@ export default {
       search: {
         mapSearch: '',
         projectSearch: '',
+        systemSearch: '',
         userSearch: '',
         organizationSearch: ''
       }
@@ -263,30 +264,6 @@ export default {
           <i class="ki ki-bold-arrow-back icon-sm"></i>
         </span>
         <!--end::Aside Toggle-->
-
-
-        <!--begin::Reports -->
-        <router-link :to="{name: 'reports.vendors'}" class="btn btn-icon btn-clean btn-lg w-40px h-40px"
-                     data-toggle="tooltip" data-placement="right" data-container="body" data-boundary="window"
-                     title="Reports">
-          <span class="symbol symbol-30 symbol-lg-40">
-              <span class="svg-icon svg-icon-xl">
-                  <!--begin::Svg Icon | path:assets/media/svg/icons/General/Shield-check.svg-->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                      <rect id="bound" x="0" y="0" width="24" height="24"></rect>
-                      <rect id="Rectangle-62-Copy" fill="#000000" opacity="0.3" x="13" y="4" width="3" height="16"
-                            rx="1.5"></rect>
-                      <rect id="Rectangle-62-Copy-2" fill="#000000" x="8" y="9" width="3" height="11" rx="1.5"></rect>
-                      <rect id="Rectangle-62-Copy-4" fill="#000000" x="18" y="11" width="3" height="9" rx="1.5"></rect>
-                      <rect id="Rectangle-62-Copy-3" fill="#000000" x="3" y="13" width="3" height="7" rx="1.5"></rect>
-                    </g>
-                  </svg>
-                <!--end::Svg Icon-->
-              </span>
-          </span>
-        </router-link>
-        <!-- end:: Reports-->
 
         <!--begin::User-->
         <router-link :to="{name: 'profile.update'}" class="btn btn-icon btn-clean btn-lg w-40px h-40px"
@@ -585,32 +562,59 @@ export default {
             </div>
             &lt;!&ndash;end::List&ndash;&gt;
           </div>-->
-          <!--end::Tab Pane-->
+<!--          end::Tab Pane-->
 
           <!--begin::Tab Pane-->
           <div class="tab-pane p-3 px-lg-7 py-lg-5 fade" :class="{'show active': currentTab === 'system'}">
+
+            <div class="p-2 p-lg-3">
+              <div class="d-flex">
+                <div class="input-icon h-40px">
+                  <input v-model="search.systemSearch" type="text"
+                         class="form-control form-control-lg form-control-solid h-40px" placeholder="Search..." />
+                  <span>
+                    <span class="svg-icon svg-icon-lg">
+                      <!--begin::Svg Icon | path:assets/images/svg/icons/General/Search.svg-->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
+                           version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <rect x="0" y="0" width="24" height="24" />
+                          <path
+                              d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
+                              fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                          <path
+                              d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
+                              fill="#000000" fill-rule="nonzero" />
+                        </g>
+                      </svg>
+                      <!--end::Svg Icon-->
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
 
             <h3 class="p-2 p-lg-3 my-1 my-lg-3">System</h3>
 
             <!--begin::List-->
             <div class="list list-hover">
               <!--begin::Item-->
-              <router-link :to="{name: 'system.data-source'}" class="list-item hoverable p-2 p-lg-3 mb-2">
+              <router-link :to="{name: 'reports.state'}" class="list-item hoverable p-2 p-lg-3 mb-2">
                 <div class="d-flex align-items-center">
                   <!--begin::Text-->
                   <div class="d-flex flex-column flex-grow-1 mr-2">
                     <span class="text-dark-75 font-size-h6 mb-0">Data Source</span>
-                    <span class="text-muted text-hover-primary font-weight-bold">System data</span>
+                    <span class="text-muted text-hover-primary font-weight-bold">System status vendors</span>
                   </div>
                   <!--begin::End-->
                 </div>
               </router-link>
-              <router-link :to="{name: 'system.logs'}" class="list-item hoverable p-2 p-lg-3 mb-2">
+              <router-link :to="{name: 'reports.logs'}" class="list-item hoverable p-2 p-lg-3 mb-2">
                 <div class="d-flex align-items-center">
                   <!--begin::Text-->
                   <div class="d-flex flex-column flex-grow-1 mr-2">
                     <span class="text-dark-75 font-size-h6 mb-0">Logs</span>
-                    <span class="text-muted text-hover-primary font-weight-bold">System logs</span>
+                    <span class="text-muted text-hover-primary font-weight-bold">Reports vendors</span>
                   </div>
                   <!--begin::End-->
                 </div>

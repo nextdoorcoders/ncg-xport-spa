@@ -1,19 +1,10 @@
 <script>
 import Fragment from '../components/Fragment'
 import {mapState} from 'vuex'
-import DataTable from 'primevue/datatable';
-import Column from 'primevue/column';
 
 export default {
   components: {
     Fragment,
-    DataTable,
-    Column
-  },
-  data() {
-    return {
-      vendorsState: []
-    }
   },
   computed: {
     ...mapState('marketing/project', [
@@ -33,11 +24,6 @@ export default {
     this.$store.dispatch('trigger/map/get');
     this.$store.dispatch('marketing/project/get');
     this.$store.dispatch('marketing/campaign/index');
-    axios.get('reports/vendors-state')
-        .then(response => {
-          this.vendorsState = response.data
-        });
-
   }
 }
 </script>
@@ -367,13 +353,6 @@ export default {
               <!--end::Body-->
             </div>
             <!--end::Advance Table Widget 9-->
-          </div>
-          <div class="col-lg-12 col-xxl-12">
-            <DataTable :value="vendorsState">
-              <Column field="name" header="Vendor name"></Column>
-              <Column field="state_for_show" header="Vendor state"></Column>
-              <Column field="time" header="Last call"></Column>
-            </DataTable>
           </div>
         </div>
         <!--end::Row-->

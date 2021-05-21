@@ -32,6 +32,18 @@ export default {
         <input v-model="conditionResource.parameters.max" class="form-control" :id="`max-${id}`"/>
       </div>
     </div>
+    <div class="form-group row">
+      <label class="col-3 col-form-label" :for="`max-${id}`">Delta</label>
+      <div class="col-9">
+        <input v-model="conditionResource.parameters.delta" type="number" class="form-control" :id="`delta-${id}`"/>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-3 col-form-label" :for="`max-${id}`">Time</label>
+      <div class="col-9">
+        <input v-model="conditionResource.parameters.time" type="number" class="form-control" :id="`time-${id}`"/>
+      </div>
+    </div>
     <div class="row">
       <div class="col-12">
         <div class="form-group row">

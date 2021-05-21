@@ -155,6 +155,34 @@ export default {
                       </div>
                     </div>
                   </div>
+<!--                  <div class="col-12 col-md-6">-->
+<!--                    <div class="list-platform">-->
+<!--                      <div class="checkbox-inline">-->
+<!--                        <label class="checkbox">-->
+<!--                          <input v-model="platforms" value="Google" type="checkbox" name="name_platform">-->
+<!--                          <span></span>Google-->
+<!--                        </label>-->
+<!--                      </div>-->
+<!--                      <div class="checkbox-inline">-->
+<!--                        <label class="checkbox">-->
+<!--                          <input v-model="platforms" value="Facebook" type="checkbox" name="name_platform">-->
+<!--                          <span></span>Facebook-->
+<!--                        </label>-->
+<!--                      </div>-->
+<!--                      <div class="checkbox-inline">-->
+<!--                        <label class="checkbox">-->
+<!--                          <input v-model="platforms" value="DV 360" type="checkbox" name="name_platform">-->
+<!--                          <span></span>DV 360-->
+<!--                        </label>-->
+<!--                      </div>-->
+<!--                      <div class="checkbox-inline">-->
+<!--                        <label class="checkbox">-->
+<!--                          <input v-model="platforms" value="AdMixer" type="checkbox" name="name_platform">-->
+<!--                          <span></span>AdMixer-->
+<!--                        </label>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
                   <div class="col-12 col-md-6">
                     <h3 class="font-size-lg text-dark font-weight-bold">Project credentials</h3>
                     <h4 class="font-size-sm text-muted mb-6">You can change this data in the future,<br/>but this will lead to the <strong>deletion</strong> of all imported digital campaigns</h4>
