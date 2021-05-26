@@ -2,9 +2,11 @@
 import Fragment from '../../components/Fragment'
 import Modal from '../../components/Modal'
 import ModalProjectDelete from '../../partials/marketing/ModalProjectDelete'
+import ListPlatform from "../../partials/marketing/ListPlatform";
 
 export default {
   components: {
+    ListPlatform,
     Modal,
     Fragment
   },
@@ -140,7 +142,10 @@ export default {
                       <label class="col-12 col-md-4 col-form-label">Manual control</label>
                       <div class="col-12 col-md-8">
                         <div class="checkbox-inline">
-                          <label class="checkbox"><input v-model="projectResource.is_enabled" type="checkbox" name="is_enabled"><span></span>Enable switching campaign statuses</label>
+                          <label class="checkbox">
+                            <input v-model="projectResource.is_enabled" type="checkbox" name="is_enabled">
+                            <span></span>Enable switching campaign statuses
+                          </label>
                         </div>
                         <span class="form-text text-muted">Global switch for all nested trigger maps</span>
                       </div>
@@ -155,60 +160,7 @@ export default {
                       </div>
                     </div>
                   </div>
-<!--                  <div class="col-12 col-md-6">-->
-<!--                    <div class="list-platform">-->
-<!--                      <div class="checkbox-inline">-->
-<!--                        <label class="checkbox">-->
-<!--                          <input v-model="platforms" value="Google" type="checkbox" name="name_platform">-->
-<!--                          <span></span>Google-->
-<!--                        </label>-->
-<!--                      </div>-->
-<!--                      <div class="checkbox-inline">-->
-<!--                        <label class="checkbox">-->
-<!--                          <input v-model="platforms" value="Facebook" type="checkbox" name="name_platform">-->
-<!--                          <span></span>Facebook-->
-<!--                        </label>-->
-<!--                      </div>-->
-<!--                      <div class="checkbox-inline">-->
-<!--                        <label class="checkbox">-->
-<!--                          <input v-model="platforms" value="DV 360" type="checkbox" name="name_platform">-->
-<!--                          <span></span>DV 360-->
-<!--                        </label>-->
-<!--                      </div>-->
-<!--                      <div class="checkbox-inline">-->
-<!--                        <label class="checkbox">-->
-<!--                          <input v-model="platforms" value="AdMixer" type="checkbox" name="name_platform">-->
-<!--                          <span></span>AdMixer-->
-<!--                        </label>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-                  <div class="col-12 col-md-6">
-                    <h3 class="font-size-lg text-dark font-weight-bold">Project credentials</h3>
-                    <h4 class="font-size-sm text-muted mb-6">You can change this data in the future,<br/>but this will lead to the <strong>deletion</strong> of all imported digital campaigns</h4>
-
-                    <div class="form-group row">
-                      <label class="col-12 col-md-4 col-form-label" for="account_id">Marketing account</label>
-                      <div class="col-12 col-md-8">
-                        <select v-model="projectResource.account_id" :disabled="accountCollection.length === 0" class="form-control" id="account_id">
-                          <option :value="null">Select account</option>
-                          <option v-for="account in accountCollection" :value="account.id">{{ account.email }} ({{ account.provider_name }})</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-12 col-md-4 col-form-label" for="parameters.account_id">Account ID</label>
-                      <div class="col-12 col-md-8">
-                        <input v-model="projectResource.parameters.account_id" class="form-control" id="parameters.account_id"/>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label class="col-12 col-md-4 col-form-label" for="parameters.developer_token">Developer token</label>
-                      <div class="col-12 col-md-8">
-                        <input v-model="projectResource.parameters.developer_token" class="form-control" type="password" id="parameters.developer_token"/>
-                      </div>
-                    </div>
-                  </div>
+                  <ListPlatform :projectResource="projectResource" :accountCollection="accountCollection"/>
                 </div>
               </div>
               <div class="card-footer">
