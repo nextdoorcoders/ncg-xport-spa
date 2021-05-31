@@ -33,6 +33,7 @@ import Error404 from '../views/pages/error/Error404'
 
 import StateVendor from "../views/pages/reports/StateVendor";
 import LogsVendor from "../views/pages/reports/LogsVendor";
+import ReportVendor from "../views/pages/reports/ReportVendor";
 
 Vue.use(VueRouter)
 
@@ -152,6 +153,15 @@ const routes = [
         meta: {
           auth: true,
           module: 'logs'
+        }
+      },
+      {
+        path: 'reports/vendors',
+        name: 'reports.vendors',
+        component: ReportVendor,
+        meta: {
+          auth: true,
+          module: 'reports'
         }
       }
     ]

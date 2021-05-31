@@ -1,8 +1,10 @@
 <script>
 import {mapState} from "vuex";
+import Fragment from "../../components/Fragment";
 
 export default {
   name: "DataSource",
+  components: {Fragment},
   computed: {
     ...mapState('reports/state',[
       'isStateCollectionLoading',
@@ -15,7 +17,7 @@ export default {
 }
 </script>
 <template>
-  <div>
+  <Fragment>
     <!--begin::Subheader-->
     <div class="subheader py-3 py-lg-8 subheader-transparent">
       <div class=" container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
@@ -50,49 +52,49 @@ export default {
                   <div class="table-responsive">
                     <table class="table table-head-custom table-vertical-center table-head-bg table-borderless">
                       <thead>
-                      <tr class="text-left">
-                        <th style="min-width: 120px">Vendor name</th>
-                        <th style="min-width: 120px">Vendor state</th>
-                        <th style="min-width: 100px">Last call</th>
-<!--                        <th style="min-width: 100px"></th>-->
-                      </tr>
+                        <tr class="text-left">
+                          <th style="min-width: 120px">Vendor name</th>
+                          <th style="min-width: 120px">Vendor state</th>
+                          <th style="min-width: 100px">Last call</th>
+  <!--                        <th style="min-width: 100px"></th>-->
+                        </tr>
                       </thead>
                       <tbody>
-                      <template v-if="isStateCollectionLoading">
-                        <tr>
-                          <td colspan="5" class="text-center">
-                            <div class="spinner spinner-track spinner-primary spinner-lg d-inline-block"></div>
-                          </td>
-                        </tr>
-                      </template>
-                      <template v-else-if="StateCollection.length > 0">
-                        <tr v-for="item in StateCollection">
-                          <td class="pl-7 py-8">{{ item.name }}</td>
-                          <td>
-                            <div class="mb-3">
-                              <span v-if="item.state_for_show === 'Active'"
-                                    class="label label-lg label-inline font-weight-bold label-light-primary text-uppercase">
-                                {{item.state_for_show}}
-                              </span>
-                              <span v-else
-                                    class="label label-lg label-inline font-weight-bold label-light-danger text-uppercase">
-                                {{item.state_for_show}}
-                              </span>
-                            </div>
-                          </td>
-                          <td>{{ item.time  }}</td>
-                          <!--                        <td class="pr-0 text-right">
-                                                    <router-link :to="{name: 'marketing.project.update', params: {project: item.id}}"
-                                                                 class="btn btn-light-success font-weight-bolder font-size-sm">View Project
-                                                    </router-link>
-                                                  </td>-->
-                        </tr>
-                      </template>
-                      <template v-else>
-                        <tr>
-                          <td colspan="5" class="text-center">No source found</td>
-                        </tr>
-                      </template>
+                        <template v-if="isStateCollectionLoading">
+                          <tr>
+                            <td colspan="5" class="text-center">
+                              <div class="spinner spinner-track spinner-primary spinner-lg d-inline-block"></div>
+                            </td>
+                          </tr>
+                        </template>
+                        <template v-else-if="StateCollection.length > 0">
+                          <tr v-for="item in StateCollection">
+                            <td>{{ item.name }}</td>
+                            <td>
+                              <div class="mb-3">
+                                <span v-if="item.state_for_show === 'Active'"
+                                      class="label label-lg label-inline font-weight-bold label-light-primary text-uppercase">
+                                  {{item.state_for_show}}
+                                </span>
+                                <span v-else
+                                      class="label label-lg label-inline font-weight-bold label-light-danger text-uppercase">
+                                  {{item.state_for_show}}
+                                </span>
+                              </div>
+                            </td>
+                            <td>{{ item.time }}</td>
+                            <!--                        <td class="pr-0 text-right">
+                                                      <router-link :to="{name: 'marketing.project.update', params: {project: item.id}}"
+                                                                   class="btn btn-light-success font-weight-bolder font-size-sm">View Project
+                                                      </router-link>
+                                                    </td>-->
+                          </tr>
+                        </template>
+                        <template v-else>
+                          <tr>
+                            <td colspan="5" class="text-center">No source found</td>
+                          </tr>
+                        </template>
                       </tbody>
                     </table>
                   </div>
@@ -110,5 +112,5 @@ export default {
       </div>
       <!--end::Container-->
     </div>
-  </div>
+  </Fragment>
 </template>

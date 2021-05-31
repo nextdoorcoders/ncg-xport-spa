@@ -36,7 +36,6 @@ export default {
     },
     onChangePage(pageOfItems) {
       this.pageOfItems = pageOfItems;
-      // this.$store.dispatch('reports/logs/get',pageOfItems);
     },
   },
 }
@@ -62,7 +61,6 @@ export default {
       </div>
     </div>
     <!--end::Subheader-->
-
     <div class="d-flex flex-column-fluid">
           <!--begin::Container-->
       <div class=" container ">
@@ -78,46 +76,45 @@ export default {
                   <div class="table-responsive">
                     <table class="table table-head-custom table-vertical-center table-head-bg table-borderless">
                       <thead>
-                      <tr class="text-left">
-                        <th style="min-width: 120px">ID</th>
-                        <th style="min-width: 120px">Time</th>
-                        <th style="min-width: 120px">Vendor</th>
-                        <th style="min-width: 100px">Code</th>
-                        <th style="min-width: 100px">Message</th>
-                        <th style="min-width: 100px">Data</th>
-                      </tr>
+                        <tr class="text-left">
+                          <th style="min-width: 120px">ID</th>
+                          <th style="min-width: 120px">Time</th>
+                          <th style="min-width: 120px">Vendor</th>
+                          <th style="min-width: 100px">Code</th>
+                          <th style="min-width: 100px">Message</th>
+                          <th style="min-width: 100px">Data</th>
+                        </tr>
                       </thead>
                       <tbody>
-                      <template v-if="isLogsCollectionLoading">
-                        <tr>
-                          <td colspan="5" class="text-center">
-                            <div class="spinner spinner-track spinner-primary spinner-lg d-inline-block"></div>
-                          </td>
-                        </tr>
-                      </template>
-                      <template v-else-if="pageOfItems.length > 0">
-                        <tr v-for="item in pageOfItems">
-                          <td class="pl-7 py-8">{{ item.id }}</td>
-                          <td class="pl-7 py-8">{{ item.time }}</td>
-                          <td class="pl-7 py-8">{{ item.vendor_service }}</td>
-                          <td class="pl-7 py-8">{{ item.http_code }}</td>
-                          <td class="pl-7 py-8">
-                            <button @click="openDialog('message',item)" class="btn btn-info">View message</button>
-                          </td>
-                          <td class="pl-7 py-8">
-                            <button @click="openDialog('data',item)" class="btn btn-info">View data</button>
-                          </td>
-                          <td class="pl-7 py-8"></td>
-                        </tr>
-                      </template>
-                      <template v-else>
-                        <tr>
-                          <td colspan="5" class="text-center">logs not found</td>
-                        </tr>
-                      </template>
+                        <template v-if="isLogsCollectionLoading">
+                          <tr>
+                            <td colspan="5" class="text-center">
+                              <div class="spinner spinner-track spinner-primary spinner-lg d-inline-block"></div>
+                            </td>
+                          </tr>
+                        </template>
+                        <template v-else-if="pageOfItems.length > 0">
+                          <tr v-for="item in pageOfItems">
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.time }}</td>
+                            <td>{{ item.vendor_service }}</td>
+                            <td>{{ item.http_code }}</td>
+                            <td>
+                              <button @click="openDialog('message',item)" class="btn btn-info">View message</button>
+                            </td>
+                            <td class="pl-7 py-8">
+                              <button @click="openDialog('data',item)" class="btn btn-info">View data</button>
+                            </td>
+                          </tr>
+                        </template>
+                        <template v-else>
+                          <tr>
+                            <td colspan="5" class="text-center">logs not found</td>
+                          </tr>
+                        </template>
                       </tbody>
                     </table>
-                    <JwPagination :items="LogsCollection" @changePage="onChangePage" :pageSize="5"></JwPagination>
+                    <JwPagination :items="LogsCollection" @changePage="onChangePage" :pageSize="25"></JwPagination>
                   </div>
                   <!--end::Table-->
                 </div>

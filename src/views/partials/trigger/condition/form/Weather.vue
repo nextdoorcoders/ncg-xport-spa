@@ -14,12 +14,22 @@ export default {
     id: function () {
       return this._uid
     }
+  },
+  methods: {
+    absoluteValue() {
+      this.conditionResource.parameters.delta = parseInt(this.conditionResource.parameters.delta);
+    },
+    invertValue(is_invert) {
+      let delta = this.conditionResource.parameters.delta;
+      this.conditionResource.parameters.delta = delta ? is_invert ? delta > 0 ? '-' + delta : delta : Math.abs(delta) : null;
+    }
   }
 }
 </script>
 
 <template>
   <Fragment>
+    {{conditionResource.parameters}}
     <div class="form-group row">
       <label class="col-3 col-form-label" :for="`min-${id}`">Min value</label>
       <div class="col-9">
@@ -34,14 +44,24 @@ export default {
     </div>
     <div class="form-group row">
       <label class="col-3 col-form-label" :for="`max-${id}`">Delta</label>
-      <div class="col-9">
+      <div class="col-7">
         <input v-model="conditionResource.parameters.delta" type="number" class="form-control" :id="`delta-${id}`"/>
+        <div class="checkbox-inline">
+          <label class="checkbox">
+            <input @click="invertValue(!conditionResource.parameters.is_inverted_delta)" v-model="conditionResource.parameters.is_inverted_delta" :id="`is_inverted_delta-${id}`" type="checkbox" name="is_inverted_delta">
+            <span></span>
+            Invert delta
+          </label>
+        </div>
+      </div>
+      <div class="col-2">
+        <button @click="absoluteValue()" class="btn btn-info">ABS</button>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-3 col-form-label" :for="`max-${id}`">Time</label>
       <div class="col-9">
-        <input v-model="conditionResource.parameters.time" type="number" class="form-control" :id="`time-${id}`"/>
+        <input v-model="conditionResource.parameters.time" min="0" type="number" class="form-control" :id="`time-${id}`"/>
       </div>
     </div>
     <div class="row">
