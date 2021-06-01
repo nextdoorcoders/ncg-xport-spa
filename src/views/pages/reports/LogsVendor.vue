@@ -102,7 +102,7 @@ export default {
                             <td>
                               <button @click="openDialog('message',item)" class="btn btn-info">View message</button>
                             </td>
-                            <td class="pl-7 py-8">
+                            <td>
                               <button @click="openDialog('data',item)" class="btn btn-info">View data</button>
                             </td>
                           </tr>

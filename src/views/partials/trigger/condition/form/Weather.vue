@@ -13,14 +13,24 @@ export default {
   computed: {
     id: function () {
       return this._uid
-    }
+    },
   },
+
   methods: {
-    absoluteValue() {
-      this.conditionResource.parameters.delta = parseInt(this.conditionResource.parameters.delta);
+    onInput() {
+      let delta = this.conditionResource.parameters.delta;
+      delta < 0
+          ? this.conditionResource.parameters.is_inverted_delta = true
+          : this.conditionResource.parameters.is_inverted_delta = false;
+    },
+    absoluteValue(is_invert) {
+      this.setDelta(is_invert,this.conditionResource.parameters.delta)
+      this.conditionResource.parameters.is_inverted_delta = false;
     },
     invertValue(is_invert) {
-      let delta = this.conditionResource.parameters.delta;
+      this.setDelta(is_invert,this.conditionResource.parameters.delta)
+    },
+    setDelta(is_invert,delta) {
       this.conditionResource.parameters.delta = delta ? is_invert ? delta > 0 ? '-' + delta : delta : Math.abs(delta) : null;
     }
   }
@@ -29,7 +39,7 @@ export default {
 
 <template>
   <Fragment>
-    {{conditionResource.parameters}}
+    {{this.conditionResource.parameters}}
     <div class="form-group row">
       <label class="col-3 col-form-label" :for="`min-${id}`">Min value</label>
       <div class="col-9">
@@ -45,7 +55,7 @@ export default {
     <div class="form-group row">
       <label class="col-3 col-form-label" :for="`max-${id}`">Delta</label>
       <div class="col-7">
-        <input v-model="conditionResource.parameters.delta" type="number" class="form-control" :id="`delta-${id}`"/>
+        <input v-model="conditionResource.parameters.delta" @input="onInput" type="number" class="form-control" :id="`delta-${id}`"/>
         <div class="checkbox-inline">
           <label class="checkbox">
             <input @click="invertValue(!conditionResource.parameters.is_inverted_delta)" v-model="conditionResource.parameters.is_inverted_delta" :id="`is_inverted_delta-${id}`" type="checkbox" name="is_inverted_delta">
@@ -55,7 +65,7 @@ export default {
         </div>
       </div>
       <div class="col-2">
-        <button @click="absoluteValue()" class="btn btn-info">ABS</button>
+        <button @click="absoluteValue(!conditionResource.parameters.is_inverted_delta)" class="btn btn-primary">ABS</button>
       </div>
     </div>
     <div class="form-group row">
