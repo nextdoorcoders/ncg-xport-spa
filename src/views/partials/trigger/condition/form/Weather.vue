@@ -17,12 +17,7 @@ export default {
   },
 
   methods: {
-    onInput() {
-      let delta = this.conditionResource.parameters.delta;
-      delta < 0
-          ? this.conditionResource.parameters.is_inverted_delta = true
-          : this.conditionResource.parameters.is_inverted_delta = false;
-    },
+
     absoluteValue(is_invert) {
       this.setDelta(is_invert,this.conditionResource.parameters.delta)
       this.conditionResource.parameters.is_inverted_delta = false;
@@ -30,9 +25,15 @@ export default {
     invertValue(is_invert) {
       this.setDelta(is_invert,this.conditionResource.parameters.delta)
     },
+    onInput() {
+      let delta = this.conditionResource.parameters.delta;
+      delta < 0
+          ? this.conditionResource.parameters.is_inverted_delta = true
+          : this.conditionResource.parameters.is_inverted_delta = false;
+    },
     setDelta(is_invert,delta) {
       this.conditionResource.parameters.delta = delta ? is_invert ? delta > 0 ? '-' + delta : delta : Math.abs(delta) : null;
-    }
+    },
   }
 }
 </script>
