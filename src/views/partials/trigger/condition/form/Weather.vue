@@ -17,22 +17,28 @@ export default {
   },
 
   methods: {
-
-    absoluteValue(is_invert) {
-      this.setDelta(is_invert,this.conditionResource.parameters.delta)
+    onInput() {
+      let delta = parseInt(this.conditionResource.parameters.delta);
+      // console.log(delta);
+      // delta < 0
+      //     ? this.conditionResource.parameters.is_inverted_delta = true
+      //     : this.conditionResource.parameters.is_inverted_delta = false;
+    },
+    absoluteValue() {
+      this.conditionResource.parameters.delta = Math.abs(this.conditionResource.parameters.delta);
       this.conditionResource.parameters.is_inverted_delta = false;
     },
     invertValue(is_invert) {
       this.setDelta(is_invert,this.conditionResource.parameters.delta)
     },
-    onInput() {
-      let delta = this.conditionResource.parameters.delta;
-      delta < 0
-          ? this.conditionResource.parameters.is_inverted_delta = true
-          : this.conditionResource.parameters.is_inverted_delta = false;
-    },
     setDelta(is_invert,delta) {
-      this.conditionResource.parameters.delta = delta ? is_invert ? delta > 0 ? '-' + delta : delta : Math.abs(delta) : null;
+      this.conditionResource.parameters.delta = delta
+          ? is_invert
+              ? delta > 0
+                  ? '-' + delta
+                  : delta
+              : Math.abs(delta)
+          : null;
     },
   }
 }
@@ -40,6 +46,7 @@ export default {
 
 <template>
   <Fragment>
+    {{conditionResource.parameters}}
     <div class="form-group row">
       <label class="col-3 col-form-label" :for="`min-${id}`">Min value</label>
       <div class="col-9">
@@ -65,7 +72,7 @@ export default {
         </div>
       </div>
       <div class="col-2">
-        <button @click="absoluteValue(!conditionResource.parameters.is_inverted_delta)" class="btn btn-primary">ABS</button>
+        <button @click="absoluteValue()" class="btn btn-primary">ABS</button>
       </div>
     </div>
     <div class="form-group row">
