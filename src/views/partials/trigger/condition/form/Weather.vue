@@ -46,7 +46,6 @@ export default {
 
 <template>
   <Fragment>
-    {{conditionResource.parameters}}
     <div class="form-group row">
       <label class="col-3 col-form-label" :for="`min-${id}`">Min value</label>
       <div class="col-9">
